@@ -6,7 +6,8 @@
         <h3 class="text-center section-heading">Master's Thesis</h3>
         <div class="thesis-card">
             <div class="row g-0 align-items-stretch">
-                {{ with $t.Params.image }}
+                {{ $img := $t.Params.banner | default $t.Params.image }}
+                {{ with $img }}
                 <div class="col-md-5 thesis-image">
                     <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $t.Title }}">
                 </div>
