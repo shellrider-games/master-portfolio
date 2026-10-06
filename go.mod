@@ -1,4 +1,4 @@
-module github.com/yourusername/master-portfolio
+module github.com/shellrider-games/master-portfolio
 
 go 1.24.1
 

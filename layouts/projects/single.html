@@ -42,7 +42,7 @@
         </div>
         {{ else if $banner }}
         <div class="project-hero">
-            <img src="{{ $banner }}" alt="{{ .Title }}">
+            <img src="{{ $banner | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}">
         </div>
         {{ end }}
 
@@ -131,7 +131,7 @@
                 {{ range .Params.gallery }}
                 <div class="col-md-4 p-2">
                     <div class="card p-0 m-0 border-0">
-                        <img class="w-100 viewer-enabled-image project-gallery-img" src="{{ . }}" alt="{{ $.Title }}">
+                        <img class="w-100 viewer-enabled-image project-gallery-img" src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $.Title }}">
                     </div>
                 </div>
                 {{ end }}

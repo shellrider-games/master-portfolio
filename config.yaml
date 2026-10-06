@@ -1,4 +1,4 @@
-baseURL: "https://example.org/"
+baseURL: "https://shellrider-games.github.io/master-portfolio/"
 languageCode: "en-us"
 title: "Georg Becker's portfolio"
 theme: ["github.com/gurusabarish/hugo-profile"]
