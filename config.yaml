@@ -339,8 +339,6 @@ params:
     # title: "Custom Name"
     content: |-
       My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you.
-
-      [georg.becker@shellrider.com](mailto:georg.becker@shellrider.com)
     btnName: "Email me"
     btnLink: mailto:georg.becker@shellrider.com
     # formspree:
