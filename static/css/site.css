@@ -20,3 +20,22 @@
     width: 18px;
     height: 18px;
 }
+
+/* CV download button in the About section */
+#about .cv-button {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: .45rem .9rem;
+    border: 1px solid var(--primary-color);
+    border-radius: .5rem;
+    color: var(--text-color) !important;
+    font-weight: 500;
+}
+
+#about .cv-button::after {
+    display: none !important;
+}
+
+#about .cv-button:hover {
+    opacity: .8;
+}

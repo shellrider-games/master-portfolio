@@ -37,6 +37,10 @@
                     {{ end }}
                 </div>
                 {{ end }}
+
+                {{ with $about.cv }}
+                <a class="btn btn-sm cv-button" href="{{ . | strings.TrimPrefix "/" | relURL }}" download>{{ $about.cvLabel | default "CV (pdf)" }}</a>
+                {{ end }}
             </div>
         </div>
     </div>

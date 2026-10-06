@@ -141,6 +141,8 @@ params:
     enable: true
     title: "About Me"
     image: "/images/me.jpg"
+    cv: "CV.pdf"
+    cvLabel: "CV (pdf)"
     content: |-
       I am an XR developer and researcher who also builds games. My strong suits are Unity and C#, and I enjoy the whole journey of a project, from prototyping and interactive systems to the DevOps and build pipelines that keep a team shipping. I am currently completing my Master in Interactive Technologies at USTP, and my game work ranges from commercial mobile and VR titles to my own first-person puzzle game. I also work with machine learning and statistics in Python, though my strengths lie in real-time XR and game development.
     skills:
