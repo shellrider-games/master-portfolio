@@ -21,7 +21,7 @@
                         {{ range $t.Params.badges }}<span class="badge">{{ . }}</span>{{ end }}
                     </div>
                     <div class="thesis-buttons">
-                        <a class="btn thesis-btn thesis-btn-primary" href="{{ $t.RelPermalink }}">Read more</a>
+                        <a class="btn thesis-btn thesis-btn-primary stretched-link" href="{{ $t.RelPermalink }}">Read more</a>
                         {{ with $t.Params.pdf }}
                         {{ if fileExists (printf "static/%s" .) }}
                         <a class="btn thesis-btn" href="{{ . | strings.TrimPrefix "/" | relURL }}">Thesis PDF</a>
