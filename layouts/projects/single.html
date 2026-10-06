@@ -67,6 +67,14 @@
         </article>
         {{ end }}
 
+        {{ with .Params.pdf }}
+        {{ if fileExists (printf "static/%s" .) }}
+        <div class="project-pdf">
+            <a class="btn project-pdf-btn" href="{{ . | strings.TrimPrefix "/" | relURL }}" download>Thesis PDF</a>
+        </div>
+        {{ end }}
+        {{ end }}
+
         {{ with .Params.challenge }}
         <section class="project-section">
             <h3>Challenge</h3>
@@ -139,13 +147,18 @@
         </section>
         {{ end }}
 
-        {{ if or .Params.links .Params.featured }}
+        {{ if or .Params.links .Params.featured .Params.pdf }}
         <section class="project-section project-links">
             {{ range .Params.links }}
             <a class="btn" href="{{ .url }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
             {{ end }}
             {{ with .Params.featured }}
             <a class="btn" href="{{ .link }}" target="_blank" rel="noopener">{{ .name }}</a>
+            {{ end }}
+            {{ with .Params.pdf }}
+            {{ if fileExists (printf "static/%s" .) }}
+            <a class="btn project-pdf-btn" href="{{ . | strings.TrimPrefix "/" | relURL }}" download>Thesis PDF</a>
+            {{ end }}
             {{ end }}
         </section>
         {{ end }}
