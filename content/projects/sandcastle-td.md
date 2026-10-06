@@ -4,7 +4,7 @@ kicker: "Commercial mobile tower defense"
 summary: "A commercial tower defense game I worked on as a freelancer for Bling Bling Games. I implemented the unit and enemy animation system, designed and optimised enemy behaviour, and automated the Jenkins build pipeline."
 image: "/images/projects/sandcastle-td/banner.png"
 banner: "/images/projects/sandcastle-td/banner.png"
-weight: 3
+weight: 5
 badges: ["Unity", "C#", "Jenkins", "Mobile"]
 tools: ["Unity", "C#", "Jenkins"]
 role: "Freelancer: unit and enemy animation system, enemy behaviour design and optimisation, Jenkins build pipeline"

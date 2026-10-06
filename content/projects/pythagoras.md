@@ -5,7 +5,7 @@ summary: "A sci-fi first-person puzzle game where you use trigonometry to stabil
 image: "/images/pythagoras.png"
 # banner: "/images/projects/pythagoras/banner.jpg"   # detail-page image (falls back to image)
 video: "https://www.youtube.com/watch?v=fIIw81RXmic"              # optional; overrides banner (16:9)
-weight: 2
+weight: 3
 badges: ["Unity", "C#", "Low-poly 3D", "First-person"]
 tools: ["Unity", "C#", "Retro Sci-Fi assets by Polynest (Unity Asset Store)"]
 role: "Solo developer: design, programming, level design and art assembly"
