@@ -5,7 +5,7 @@ summary: "An underwater VR level built around a hand-played organ. Every key is 
 image: "/images/cthulhu.jpg"
 video: "https://www.youtube.com/watch?v=muGQH67wJ0A"
 weight: 5
-badges: ["Unity", "Wwise", "VR", "Ambisonics", "Interactive Audio"]
+badges: ["Unity", "Wwise", "VR", "Interactive Audio"]
 tools: ["Unity", "Wwise"]
 role: "Audio: Wwise integration, interactive underwater organ, Cthulhu voicelines"
 teamMembers: "Serkan Sönmez, Florian Fußthaler, Christof Kuba, Georg Becker"
