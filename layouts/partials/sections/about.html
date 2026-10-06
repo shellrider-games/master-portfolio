@@ -1,0 +1,44 @@
+{{ if .Site.Params.about.enable | default false }}
+{{- $about := .Site.Language.Params.about | default .Site.Params.about -}}
+<section id="about" class="py-0 py-sm-5">
+    <div class="container bg-transparent">
+        <h3 class="text-center bg-transparent">{{ $about.title | default (i18n "about") }}</h3>
+        <div class="bg-transparent row justify-content-center px-3 py-5">
+            {{ if .Site.Params.about.image }}
+            <div class="col-sm-12 col-md-8 col-lg-4 mb-5 mb-sm-0 mb-md-5 mb-lg-0 d-none d-sm-none d-md-block">
+                <div class="image d-flex px-5">
+                    <img src="{{ .Site.Params.about.image }}" class="img-thumbnail mx-auto rounded-circle" alt="{{ .Site.Params.title }} profile picture">
+                </div>
+            </div>
+            {{ end }}
+            <div class="col-sm-12 col-md-12 col-lg-8 content">
+                {{ $about.content | markdownify }}
+
+                {{ if .Site.Params.about.skills.enable }}
+                <p class="skills-title">{{ $about.skills.title | default .Site.Params.about.skills.title }}</p>
+                <div class="skill-list">
+                    {{ range $about.skills.items }}
+                    {{ $level := .level | default 3 }}
+                    <div class="skill">
+                        {{ if .logo }}
+                        <img class="skill-logo" src="{{ .logo }}" alt="{{ .name }} logo">
+                        {{ else if .icon }}
+                        <i class="{{ .icon }} skill-logo" aria-hidden="true"></i>
+                        {{ end }}
+                        <div class="skill-info">
+                            <span class="skill-name">{{ .name }}</span>
+                            <div class="skill-bar" role="img" aria-label="{{ .name }} {{ $level }} out of 5">
+                                {{ range seq 1 5 }}
+                                <span class="skill-bar-segment{{ if le . $level }} filled{{ end }}"></span>
+                                {{ end }}
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

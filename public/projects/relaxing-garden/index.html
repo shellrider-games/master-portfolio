@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta http-equiv="Accept-CH" content="DPR, Viewport-Width, Width">
+<link rel="icon" href="/blank.gif" type="image/gif">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      media="print" onload="this.media='all'" />
+<noscript>
+  <link
+          href="https://fonts.googleapis.com/css2?family=Alata&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+</noscript>
+
+
+<link rel="stylesheet" href="/css/font.css" media="all">
+
+
+
+<meta property="og:url" content="http://localhost:1313/projects/relaxing-garden/">
+  <meta property="og:site_name" content="Georg Becker&#39;s portfolio">
+  <meta property="og:title" content="Relaxing Garden">
+  <meta property="og:description" content="A mixed-reality garden that grows as you relax. Biofeedback from your heart drives a personal AR garden in real time. Built at the SensAI Hack 2025 in Barcelona, Runner-Up in the AI with Camera Access by Meta category.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Relaxing Garden">
+  <meta name="twitter:description" content="A mixed-reality garden that grows as you relax. Biofeedback from your heart drives a personal AR garden in real time. Built at the SensAI Hack 2025 in Barcelona, Runner-Up in the AI with Camera Access by Meta category.">
+
+
+
+
+
+<link rel="stylesheet" href="/bootstrap-5/css/bootstrap.min.css" media="all"><link rel="stylesheet" href="/css/header.css" media="all">
+<link rel="stylesheet" href="/css/language-switcher.css" media="all">
+<link rel="stylesheet" href="/css/footer.css" media="all">
+
+
+<link rel="stylesheet" href="/css/theme.css" media="all">
+
+<style>
+    :root {
+        --text-color: #343a40;
+        --text-secondary-color: #6c757d;
+        --text-link-color: #5b6c8f;
+        --background-color: #eaedf0;
+        --secondary-background-color: #64ffda1a;
+        --primary-color: #5b6c8f;
+        --secondary-color: #f8f9fa;
+
+         
+        --text-color-dark: #e4e6eb;
+        --text-secondary-color-dark: #b0b3b8;
+        --text-link-color-dark: #ffffff;
+        --background-color-dark: #18191a;
+        --secondary-background-color-dark: #212529;
+        --primary-color-dark: #ffffff;
+        --secondary-color-dark: #212529;
+    }
+    body {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    html {
+        background-color: var(--background-color) !important;
+    }
+
+    body::-webkit-scrollbar {
+        height: 0px;
+        width: 8px;
+        background-color: var(--background-color);
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 1rem;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 1rem;
+        background: #b0b0b0;
+        outline: 1px solid var(--background-color);
+    }
+
+    #search-content::-webkit-scrollbar {
+        width: .5em;
+        height: .1em;
+        background-color: var(--background-color);
+    }
+</style>
+
+<link rel="stylesheet" href="/css/skills.css" media="all">
+<link rel="stylesheet" href="/css/project-detail.css?v=2" media="all">
+<link rel="stylesheet" href="/css/projects-home.css" media="all">
+
+
+<meta name="description" content="A mixed-reality garden that grows as you relax. Biofeedback from your heart drives a personal AR garden in real time. Built at the SensAI Hack 2025 in Barcelona, Runner-Up in the AI with Camera Access by Meta category.">
+<link rel="stylesheet" href="/css/projects.css" media="all">
+<link rel="stylesheet" href="/css/single.css" media="all">
+
+<script defer src="/fontawesome-6/all-6.4.2.js"></script>
+
+
+  
+  
+
+  <title>
+Relaxing Garden | Georg Becker&#39;s portfolio
+
+  </title>
+</head>
+
+<body class="light">
+  
+  
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+
+
+
+<script>
+    var prevScrollPos = window.pageYOffset;
+    window.addEventListener("scroll", function showHeaderOnScroll() {
+        let profileHeaderElem = document.getElementById("profileHeader");
+        let currentScrollPos = window.pageYOffset;
+        let resetHeaderStyle = false;
+        let showNavBarOnScrollUp =  true ;
+        let showNavBar = showNavBarOnScrollUp ? prevScrollPos > currentScrollPos : currentScrollPos > 0;
+        if (showNavBar) {
+            profileHeaderElem.classList.add("showHeaderOnTop");
+        } else {
+            resetHeaderStyle = true;
+        }
+        if(currentScrollPos === 0) {
+            resetHeaderStyle = true;
+        }
+        if(resetHeaderStyle) {
+            profileHeaderElem.classList.remove("showHeaderOnTop");
+        }
+        prevScrollPos = currentScrollPos;
+    });
+</script>
+
+
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg animate">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+
+            
+
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24" data-view-component="true">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+
+            
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav ms-auto text-center">
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#about" aria-label="about">
+                            About Me
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="/#projects"
+                            aria-label="projects">
+                            Projects
+                        </a>
+                    </li>
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                    
+
+                    <li class="nav-item navbar-text">
+                        
+                        <div class="text-center">
+                            <button id="theme-toggle" type="button" aria-label="Toggle dark mode">
+                                <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                                </svg>
+                                <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="5"></circle>
+                                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </li>
+                    
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<div id="content">
+<section id="project-single" class="py-5">
+    <div class="container">
+        <div class="mb-4">
+            <a class="project-back" href="/#projects">
+                &larr; Projects
+            </a>
+        </div>
+
+        <header class="project-header text-center">
+            <p class="project-kicker">Hackathon, mixed-reality biofeedback</p>
+            <h1 class="project-title">Relaxing Garden</h1>
+            <p class="project-summary">A mixed-reality garden that grows as you relax. Biofeedback from your heart drives a personal AR garden in real time. Built at the SensAI Hack 2025 in Barcelona, Runner-Up in the AI with Camera Access by Meta category.</p>
+        </header>
+
+        
+        
+        
+        
+        
+        
+        <div class="project-hero">
+            <div class="ratio ratio-16x9 project-hero-video">
+                <iframe src="https://www.youtube.com/embed/NaNxa7DFRBo" title="Relaxing Garden" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+
+        
+        <div class="project-meta row">
+            <div class="col-md-6 col-lg-3"><span class="meta-label">When</span><span class="meta-value">2025</span></div>
+            <div class="col-md-6 col-lg-3"><span class="meta-label">Duration</span><span class="meta-value">Hackathon (SensAI Hack 2025, Barcelona)</span></div>
+            <div class="col-md-6 col-lg-3"><span class="meta-label">My role</span><span class="meta-value">Camera Access API integration, leaf-shape detection pipeline (images sent to a local server for ML), growth shaders and procedural plant growth, and working with HR and HRV data</span></div>
+            <div class="col-md-6 col-lg-3"><span class="meta-label">Team</span><span class="meta-value">Tobias Furtlehner, Laura Cesar, Sofiia-Khrystyna Borysiuk, Georg Becker</span></div>
+        </div>
+        
+
+        
+        <div class="project-badges">
+            <span class="badge badge-secondary">Unity</span><span class="badge badge-secondary">Meta Quest</span><span class="badge badge-secondary">Camera Access API</span>
+        </div>
+        
+
+        
+        <article class="project-content page-content">
+            <p>Relaxing Garden is a mixed-reality biofeedback experience built at the SensAI Hack 2025 in Barcelona. Instead of charts and numbers, it turns your heart rate and heart rate variability into a garden that grows as you relax and slows when your arousal rises.</p>
+
+        </article>
+        
+
+        
+        <section class="project-section">
+            <h3>Challenge</h3>
+            <p>A hackathon weekend with a brand-new, barely documented camera API, unfamiliar ML tooling and live biofeedback. We had to get leaf detection, a Flask data pipeline and a calm AR experience working under real time pressure.</p>
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>What we built</h3>
+            <p>Relaxing Garden turns heart rate and heart rate variability into a living AR garden. We connected a heart rate monitor and calculated a continuous relaxation score, streamed it through a lightweight Flask API into a Unity AR environment, and let custom growth shaders and procedural generation make the garden flourish as the user relaxes. Users can draw their own leaf on paper, which the system detects and grows into their plants.</p>
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>My contribution</h3>
+            <p>I worked with the then newly released Camera Access API and sent the captured images to our local server that ran the machine learning. I also implemented the shaders and how the plants grow. It was my first time working with HR and HRV data, which also connects to my master&rsquo;s thesis project on collecting biosensor data in VR.</p>
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>Result</h3>
+            
+            <p>A working mixed-reality biofeedback prototype built and demoed over the hackathon weekend.</p>
+            
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>Achievements and Awards</h3>
+            
+            <ul><li>Runner-Up, AI with Camera Access by Meta, SensAI Hack 2025 (Barcelona)</li></ul>
+            
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>What I learned</h3>
+            <p>It was a great experience to compete with so many talented developers from all over the world, and I had to learn how to work under a lot of pressure with technologies I was not yet familiar with.</p>
+        </section>
+        
+
+        
+        <section class="project-section">
+            <h3>Tools &amp; tech</h3>
+            <div class="project-tools"><span class="badge badge-secondary">Unity</span><span class="badge badge-secondary">Python</span><span class="badge badge-secondary">Flask</span><span class="badge badge-secondary">Meta Quest</span></div>
+        </section>
+        
+
+        
+
+        
+        <section class="project-section project-links">
+            
+            <a class="btn" href="https://devpost.com/software/relaxing-garden" target="_blank" rel="noopener"><i class="fa-solid fa-trophy"></i></a>
+            
+            
+        </section>
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <nav class="project-next">
+            <span class="next-label">Next project</span>
+            <a href="/projects/cthulhus-organ/">Cthulhu&#39;s organ &rarr;</a>
+        </nav>
+        
+    </div>
+</section>
+
+
+
+  </div><footer>
+    
+
+
+ 
+
+<div class="text-center pt-2">
+    
+
+    
+
+    
+
+    
+
+    
+</div><div class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-md-4 text-center">
+            
+                <div class="pb-2">
+                    <a href="http://localhost:1313/" title="Georg Becker&#39;s portfolio">
+                        <img alt="Footer logo" src="/blank.gif"
+                            height="40px" width="40px">
+                    </a>
+                </div>
+            
+            &copy; 2026  All rights reserved
+            <div class="pt-1">
+                <a href="/imprint/">Imprint</a>
+            </div>
+            <div class="text-secondary">
+                Made with
+                <span class="text-danger">
+                    &#10084;
+                </span>
+                and
+                <a href="https://github.com/gurusabarish/hugo-profile" target="_blank"
+                    title="Designed and developed by gurusabarish">
+                    Hugo Profile
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+</footer><script src="/bootstrap-5/js/bootstrap.bundle.min.js"></script>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.classList.add('dark');
+        document.body.classList.add('dark');
+    }
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            document.documentElement.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  <section id="search-content" class="py-2">
+    <div class="container" id="search-results"></div>
+  </section>
+</body>
+
+</html>

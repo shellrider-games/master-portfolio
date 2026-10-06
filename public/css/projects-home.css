@@ -1,0 +1,113 @@
+/* Home / profile project cards: large (featured) and small variants */
+
+/* Reduce empty space above the Projects heading */
+#projects {
+    padding-top: 1rem !important;
+}
+
+/* ---------- Large cards: full-bleed image with dark gradient overlay ---------- */
+#projects .card.project-card-lg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 760px !important;
+    max-height: 760px !important;
+    min-height: 0 !important;
+    overflow: hidden;
+    background: linear-gradient(160deg, #2b2f4a 0%, #15141f 100%) !important;
+}
+
+#projects .card.project-card-lg .card-head {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+#projects .card.project-card-lg .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#projects .card.project-card-lg::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 78%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0.8) 32%, rgba(0, 0, 0, 0.45) 62%, rgba(0, 0, 0, 0) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+#projects .card.project-card-lg .card-body,
+#projects .card.project-card-lg .card-footer {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    background-color: transparent !important;
+}
+
+#projects .card.project-card-lg .card-body {
+    margin-top: 0;
+}
+
+#projects .card.project-card-lg .card-footer {
+    border-top: none !important;
+}
+
+#projects .card.project-card-lg .card-title,
+#projects .card.project-card-lg .card-text,
+#projects .card.project-card-lg a,
+#projects .card.project-card-lg .float-end .btn,
+#projects .card.project-card-lg .float-end .btn i {
+    color: #fff !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+#projects .card.project-card-lg .float-end .btn {
+    border-color: #fff !important;
+}
+
+/* Keep the whole card clickable while inner links stay usable */
+#projects .card.project-card-lg .stretched-link::after {
+    z-index: 5;
+}
+
+#projects .card.project-card-lg .card-footer a {
+    position: relative;
+    z-index: 6;
+}
+
+/* ---------- Small cards: compact vertical card (~300px) ---------- */
+#projects .card.project-card-sm {
+    height: 300px !important;
+    max-height: 300px !important;
+    min-height: 0 !important;
+    overflow: hidden;
+}
+
+#projects .card.project-card-sm .card-head {
+    height: 150px;
+    flex: 0 0 150px;
+    overflow: hidden;
+}
+
+#projects .card.project-card-sm .card-img-top {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#projects .card.project-card-sm .card-text {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}

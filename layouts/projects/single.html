@@ -1,0 +1,177 @@
+{{ define "head" }}
+<meta name="description" content="{{ .Params.summary | default .Summary | plainify }}">
+<link rel="stylesheet" href="{{ (printf "%scss/projects.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+<link rel="stylesheet" href="{{ (printf "%scss/single.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+{{ if .Params.gallery }}
+<link rel="stylesheet" href="{{ (printf "%scss/gallery.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+<link rel="stylesheet" href="{{ (printf "%sviewer/viewer.min.css" (.Site.Params.staticPath | default "")) | relURL }}" media="all">
+<script src="{{ (printf "%sviewer/viewer.min.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
+{{ end }}
+<script defer src="{{ (printf "%sfontawesome-6/all-6.4.2.js" (.Site.Params.staticPath | default "")) | relURL }}"></script>
+{{ end }}
+
+{{ define "title" }}
+{{ .Title }} | {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<section id="project-single" class="py-5">
+    <div class="container">
+        <div class="mb-4">
+            <a class="project-back" href="{{ .Site.Home.RelPermalink }}#projects">
+                &larr; {{ .Site.Params.projects.title | default (i18n "projects") }}
+            </a>
+        </div>
+
+        <header class="project-header text-center">
+            {{ with .Params.kicker }}<p class="project-kicker">{{ . }}</p>{{ end }}
+            <h1 class="project-title">{{ .Title }}</h1>
+            {{ with .Params.summary }}<p class="project-summary">{{ . }}</p>{{ end }}
+        </header>
+
+        {{ $banner := .Params.banner | default .Params.image }}
+        {{ if .Params.video }}
+        {{ $id := .Params.video }}
+        {{ if strings.Contains .Params.video "youtu" }}
+        {{ $id = index (findRE "[A-Za-z0-9_-]{11}" .Params.video) 0 }}
+        {{ end }}
+        <div class="project-hero">
+            <div class="ratio ratio-16x9 project-hero-video">
+                <iframe src="https://www.youtube.com/embed/{{ $id }}" title="{{ .Title }}" loading="lazy" allowfullscreen></iframe>
+            </div>
+        </div>
+        {{ else if $banner }}
+        <div class="project-hero">
+            <img src="{{ $banner }}" alt="{{ .Title }}">
+        </div>
+        {{ end }}
+
+        {{ if or .Params.when .Params.duration .Params.role .Params.team }}
+        <div class="project-meta row">
+            {{ with .Params.when }}<div class="col-md-6 col-lg-3"><span class="meta-label">When</span><span class="meta-value">{{ . }}</span></div>{{ end }}
+            {{ with .Params.duration }}<div class="col-md-6 col-lg-3"><span class="meta-label">Duration</span><span class="meta-value">{{ . }}</span></div>{{ end }}
+            {{ with .Params.role }}<div class="col-md-6 col-lg-3"><span class="meta-label">My role</span><span class="meta-value">{{ . }}</span></div>{{ end }}
+            {{ with .Params.teamMembers }}<div class="col-md-6 col-lg-3"><span class="meta-label">Team</span><span class="meta-value">{{ . }}</span></div>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.badges }}
+        <div class="project-badges">
+            {{ range . }}<span class="badge badge-secondary">{{ . }}</span>{{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Content }}
+        <article class="project-content page-content">
+            {{ . | emojify }}
+        </article>
+        {{ end }}
+
+        {{ with .Params.challenge }}
+        <section class="project-section">
+            <h3>Challenge</h3>
+            <p>{{ . | markdownify }}</p>
+        </section>
+        {{ end }}
+
+        {{ with .Params.approach }}
+        <section class="project-section">
+            <h3>{{ if $.Params.team }}What we built{{ else }}What I built{{ end }}</h3>
+            <p>{{ . | markdownify }}</p>
+        </section>
+        {{ end }}
+
+        {{ with .Params.contribution }}
+        <section class="project-section">
+            <h3>My contribution</h3>
+            <p>{{ . | markdownify }}</p>
+        </section>
+        {{ end }}
+
+        {{ with .Params.result }}
+        <section class="project-section">
+            <h3>Result</h3>
+            {{ if reflect.IsSlice . }}
+            <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+            {{ else }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+        </section>
+        {{ end }}
+
+        {{ with .Params.achievements }}
+        <section class="project-section">
+            <h3>Achievements and Awards</h3>
+            {{ if reflect.IsSlice . }}
+            <ul>{{ range . }}<li>{{ . | markdownify }}</li>{{ end }}</ul>
+            {{ else }}
+            <p>{{ . | markdownify }}</p>
+            {{ end }}
+        </section>
+        {{ end }}
+
+        {{ with .Params.learned }}
+        <section class="project-section">
+            <h3>What I learned</h3>
+            <p>{{ . | markdownify }}</p>
+        </section>
+        {{ end }}
+
+        {{ with .Params.tools }}
+        <section class="project-section">
+            <h3>Tools &amp; tech</h3>
+            <div class="project-tools">{{ range . }}<span class="badge badge-secondary">{{ . }}</span>{{ end }}</div>
+        </section>
+        {{ end }}
+
+        {{ if .Params.gallery }}
+        <section class="project-section project-gallery-section">
+            <h3>Gallery</h3>
+            <div class="row justify-content-center project-gallery">
+                {{ range .Params.gallery }}
+                <div class="col-md-4 p-2">
+                    <div class="card p-0 m-0 border-0">
+                        <img class="w-100 viewer-enabled-image project-gallery-img" src="{{ . }}" alt="{{ $.Title }}">
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+        </section>
+        {{ end }}
+
+        {{ if or .Params.links .Params.featured }}
+        <section class="project-section project-links">
+            {{ range .Params.links }}
+            <a class="btn" href="{{ .url }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
+            {{ end }}
+            {{ with .Params.featured }}
+            <a class="btn" href="{{ .link }}" target="_blank" rel="noopener">{{ .name }}</a>
+            {{ end }}
+        </section>
+        {{ end }}
+
+        {{ $pages := .CurrentSection.Pages.ByWeight }}
+        {{ $count := len $pages }}
+        {{ $next := index $pages 0 }}
+        {{ range $i, $e := $pages }}
+        {{ if eq $e.RelPermalink $.RelPermalink }}
+        {{ $next = index $pages (mod (add $i 1) $count) }}
+        {{ end }}
+        {{ end }}
+        {{ with $next }}
+        <nav class="project-next">
+            <span class="next-label">Next project</span>
+            <a href="{{ .RelPermalink }}">{{ .Title }} &rarr;</a>
+        </nav>
+        {{ end }}
+    </div>
+</section>
+
+{{ if .Params.gallery }}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    new Viewer(document.getElementById('project-single'), { navbar: false, title: false });
+});
+</script>
+{{ end }}
+{{ end }}
