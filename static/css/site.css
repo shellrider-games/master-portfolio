@@ -1,0 +1,23 @@
+/* Align the navbar items and theme toggle */
+
+@media (min-width: 992px) {
+    #profileHeader .navbar-nav {
+        align-items: center;
+    }
+}
+
+#profileHeader #theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 4px;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+#profileHeader #theme-toggle svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+}
