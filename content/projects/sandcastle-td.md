@@ -4,7 +4,7 @@ kicker: "Commercial mobile tower defense"
 summary: "A commercial tower defense game I worked on as a freelancer for Bling Bling Games. I implemented the unit and enemy animation system, designed and optimised enemy behaviour, and automated the Jenkins build pipeline."
 image: "/images/projects/sandcastle-td/banner.png"
 banner: "/images/projects/sandcastle-td/banner.png"
-weight: 6
+weight: 3
 badges: ["Unity", "C#", "Jenkins", "Mobile"]
 tools: ["Unity", "C#", "Jenkins"]
 role: "Freelancer: unit and enemy animation system, enemy behaviour design and optimisation, Jenkins build pipeline"
@@ -17,8 +17,10 @@ result: "Sandcastle TD has shipped on Google Play and the App Store, with more t
 learned: "This project taught me how to apply my skills within a team, work according to designer specifications, identify problems and propose solutions, and handle a professional relationship as a contractor."
 links:
   - icon: fab fa-google-play
+    name: "Google Play"
     url: "https://play.google.com/store/apps/details?id=com.blingblinggames.sandcastletd"
   - icon: fab fa-apple
+    name: "App Store"
     url: "https://apps.apple.com/de/app/sandcastle-td/id6745550244?l=en-GB"
 gallery: []
 showInHome: true

@@ -5,7 +5,7 @@ summary: "A multiplayer, colocated VR experience where three players solve puzzl
 image: "/images/historiavirtualis.png"
 # banner: "/images/projects/historia-virtualis/banner.jpg"   # detail-page image (falls back to image)
 video: "https://www.youtube.com/watch?v=JfwlEoEAzEo"                       # optional; overrides banner (16:9)
-weight: 2
+weight: 5
 badges: ["VR", "Multiplayer", "Location-based"]
 tools: ["Unity", "C#", "Meta XR SDK", "Hand Tracking", "Shared Spatial Anchors", "Meta Avatars"]
 role: "Development Operations, Multiplayer development, Implementation of player challenges"
@@ -28,7 +28,6 @@ links: []
 gallery: []
 # gallery:
 #   - "/images/projects/historia-virtualis/01.jpg"
-large: true
 showInHome: true
 ---
 

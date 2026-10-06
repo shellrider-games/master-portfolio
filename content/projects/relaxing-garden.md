@@ -21,6 +21,7 @@ achievements:
 learned: "It was a great experience to compete with so many talented developers from all over the world, and I had to learn how to work under a lot of pressure with technologies I was not yet familiar with."
 links:
   - icon: fa-solid fa-trophy
+    name: "Devpost"
     url: "https://devpost.com/software/relaxing-garden"
 gallery: []
 showInHome: true

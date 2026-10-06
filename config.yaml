@@ -41,6 +41,7 @@ markup:
 params:
   title: "Georg Becker's portfolio"
   description: Text about my cool site
+  copyright: "Georg Becker"
   # staticPath: ""  # The path to serve the static files from
   favicon: "/blank.gif"
 
@@ -100,7 +101,7 @@ params:
     align: ms-auto # Left: ms-auto | center: mx-auto | right: me-auto | Default: ms-auto
     # brandLogo: "/logo.png" # Logo for the brand | default is the favicon variable
     # showBrandLogo: false # Show brand logo in nav bar | default is true
-    brandName: "Hugo Profile" # Brand name for the brand | default is the title variable
+    brandName: "Georg Becker" # Brand name for the brand | default is the title variable
     disableSearch: true
     # searchPlaceholder: "Search"
     stickyNavBar:
@@ -139,12 +140,13 @@ params:
   # About
   about:
     enable: true
-    title: "About Me"
+    kicker: "XR Developer & Researcher"
+    greeting: "Hi, I'm Georg Becker."
     image: "/images/me.jpg"
-    cv: "CV.pdf"
-    cvLabel: "CV (pdf)"
     content: |-
-      I am an XR developer and researcher who also builds games. My strong suits are Unity and C#, and I enjoy the whole journey of a project, from prototyping and interactive systems to the DevOps and build pipelines that keep a team shipping. I am currently completing my Master in Interactive Technologies at USTP, and my game work ranges from commercial mobile and VR titles to my own first-person puzzle game. I also work with machine learning and statistics in Python, though my strengths lie in real-time XR and game development.
+      I am an XR developer and researcher who also builds games. My strong suits are Unity and C#, and I enjoy the whole journey of a project, from prototyping and interactive systems to the DevOps and build pipelines that keep a team shipping.
+
+      I am currently completing my Master's in Interactive Technologies at the St. Pölten University of Applied Sciences (USTP), where my thesis explores collecting biosensor data in VR. My game work ranges from commercial mobile and VR titles to my own first-person puzzle game, and I also work with machine learning and statistics in Python, though my strengths lie in real-time XR and game development.
     skills:
       enable: true
       title: "My strongest skills:"
@@ -343,6 +345,15 @@ params:
       My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you.
     btnName: "Email me"
     btnLink: mailto:georg.becker@shellrider.com
+    cv: "CV.pdf"
+    cvLabel: "CV (PDF)"
+    socials:
+      - name: "GitHub"
+        url: "https://github.com/shellrider-games"
+      - name: "LinkedIn"
+        url: "https://www.linkedin.com/in/georg-becker"
+      - name: "itch.io"
+        url: "https://shellrider.itch.io"
     # formspree:
     #   enable: true # `contact.email` value will be ignored
     #   formId: abcdefgh # Take it from your form's endpoint, like 'https://formspree.io/f/abcdefgh'

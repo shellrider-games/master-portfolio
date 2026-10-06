@@ -4,7 +4,7 @@ kicker: "VR, 360° interactive audio"
 summary: "An underwater VR level built around a hand-played organ. Every key is mapped to a sampled church organ and mixed as an interactive, ambisonic soundscape, so the music, the sea creatures and Cthulhu all surround you."
 image: "/images/cthulhu.jpg"
 video: "https://www.youtube.com/watch?v=muGQH67wJ0A"
-weight: 5
+weight: 6
 badges: ["Unity", "Wwise", "VR", "Interactive Audio"]
 tools: ["Unity", "Wwise"]
 role: "Audio: Wwise integration, interactive underwater organ, Cthulhu voicelines"

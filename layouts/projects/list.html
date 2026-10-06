@@ -10,12 +10,12 @@
 
 {{ define "main" }}
 <div class="container pt-5" id="projects">
-    <h2 class="text-center pb-2">{{ .Title }}</h2>
+    <h3 class="text-center section-heading">{{ .Title }}</h3>
     {{ with .Params.description }}<h6 class="text-center">{{ . | emojify }}</h6>{{ end }}
-    <div class="row">
+    <div class="row justify-content-center px-3 px-md-5">
         {{ range .Paginator.Pages.ByWeight }}
         <div class="col-lg-4 col-md-6 my-3">
-            <div class="card my-3 h-100 position-relative" title="{{ .Title }}">
+            <div class="card project-card h-100 position-relative" title="{{ .Title }}">
                 {{ if .Params.image }}
                 <div class="card-head">
                     <img class="card-img-top" src="{{ .Params.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}">
@@ -27,20 +27,18 @@
                         <span class="badge badge-secondary">{{ . }}</span>
                         {{ end }}
                     </div>
-                    <h5 class="card-title bg-transparent">{{ .Title | truncate 50 }}</h5>
+                    <h5 class="card-title bg-transparent">{{ .Title }}</h5>
                     <div class="card-text bg-transparent secondary-font">
-                        {{ .Summary | truncate 100 | safeHTML }}
+                        {{ .Summary | truncate 150 }}
                     </div>
                 </div>
-                <div class="card-footer py-3">
+                <div class="card-footer project-card-footer">
+                    <a class="project-card-link" href="{{ .RelPermalink }}">Details</a>
                     {{ range .Params.links }}
-                    <span class="m-1 mx-2 position-relative">
-                        <a href="{{ .url }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
-                    </span>
+                    <a class="project-card-link" href="{{ .url }}" target="_blank" rel="noopener">
+                        {{ if .name }}{{ .name }} <span aria-hidden="true">&nearr;</span>{{ else }}<i class="{{ .icon }}"></i>{{ end }}
+                    </a>
                     {{ end }}
-                    <span class="float-end">
-                        <a class="btn btn-sm" href="{{ .RelPermalink }}">Details</a>
-                    </span>
                 </div>
                 <a class="stretched-link" href="{{ .RelPermalink }}" aria-label="{{ .Title }}"></a>
             </div>

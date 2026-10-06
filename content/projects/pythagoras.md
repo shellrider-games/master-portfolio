@@ -5,7 +5,7 @@ summary: "A sci-fi first-person puzzle game where you use trigonometry to stabil
 image: "/images/pythagoras.png"
 # banner: "/images/projects/pythagoras/banner.jpg"   # detail-page image (falls back to image)
 video: "https://www.youtube.com/watch?v=fIIw81RXmic"              # optional; overrides banner (16:9)
-weight: 3
+weight: 2
 badges: ["Unity", "C#", "Low-poly 3D", "First-person"]
 tools: ["Unity", "C#", "Retro Sci-Fi assets by Polynest (Unity Asset Store)"]
 role: "Solo developer: design, programming, level design and art assembly"
@@ -18,15 +18,16 @@ result: "In active development since August 2025, with a free public playtest bu
 learned: "Planning a full game production from start to finish is a real challenge and thus fur thaught me important lessons in how to prototype but also how to get people to care that your project exists. So much about game development is not about technical and design capabilities but about management and organisation."
 links:
   - icon: fab fa-steam
+    name: "Steam"
     url: "https://store.steampowered.com/app/4078620/Pythagoras/"
   - icon: fab fa-itch-io
+    name: "itch.io"
     url: "https://shellrider.itch.io/pythagoras-playtest"
 gallery:
   - "/images/projects/pythagoras/01.png"
   - "/images/projects/pythagoras/02.png"
   - "/images/projects/pythagoras/03.png"
   - "/images/projects/pythagoras/04.jpg"
-large: true
 showInHome: true
 ---
 

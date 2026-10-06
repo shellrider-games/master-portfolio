@@ -1,0 +1,28 @@
+{{ if .Site.Params.contact.enable | default false }}
+{{- $contact := .Site.Language.Params.contact | default .Site.Params.contact -}}
+<section id="contact" class="py-5">
+    <div class="container">
+        <h3 class="text-center section-heading">{{ $contact.title | default (i18n "contact") }}</h3>
+        <div class="row justify-content-center px-md-5">
+            <div class="col-md-8 py-3 text-center">
+                <div class="contact-text">{{ $contact.content | emojify | markdownify }}</div>
+                <div class="contact-buttons">
+                    {{ if $contact.btnLink }}
+                    <a class="btn contact-btn" href="{{ $contact.btnLink }}" target="_blank" rel="noopener">{{ $contact.btnName | default "Email me" }}</a>
+                    {{ end }}
+                    {{ with $contact.cv }}
+                    <a class="btn contact-btn" href="{{ . | strings.TrimPrefix "/" | relURL }}" download>{{ $contact.cvLabel | default "CV (PDF)" }}</a>
+                    {{ end }}
+                </div>
+                {{ with $contact.socials }}
+                <div class="contact-socials">
+                    {{ range . }}
+                    <a class="contact-social-link" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }} <span aria-hidden="true">&nearr;</span></a>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

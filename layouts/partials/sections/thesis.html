@@ -1,0 +1,35 @@
+{{ $thesisPages := where .Site.RegularPages "Params.thesis" true }}
+{{ with index $thesisPages 0 }}
+{{ $t := . }}
+<section id="thesis" class="py-5">
+    <div class="container">
+        <h3 class="text-center section-heading">Master's Thesis</h3>
+        <div class="thesis-card">
+            <div class="row g-0 align-items-stretch">
+                {{ with $t.Params.image }}
+                <div class="col-md-5 thesis-image">
+                    <img src="{{ . | strings.TrimPrefix "/" | relURL }}" alt="{{ $t.Title }}">
+                </div>
+                {{ end }}
+                <div class="col-md-7 thesis-panel">
+                    <p class="thesis-kicker">Master's Thesis · USTP · {{ $t.Params.when }}</p>
+                    <h4 class="thesis-title">{{ $t.Title }}</h4>
+                    <p class="thesis-summary">{{ $t.Params.summary }}</p>
+                    {{ with $t.Params.researchQuestion }}<p class="thesis-research">{{ . }}</p>{{ end }}
+                    <div class="thesis-badges">
+                        {{ range $t.Params.badges }}<span class="badge">{{ . }}</span>{{ end }}
+                    </div>
+                    <div class="thesis-buttons">
+                        <a class="btn thesis-btn thesis-btn-primary" href="{{ $t.RelPermalink }}">Read more</a>
+                        {{ with $t.Params.pdf }}
+                        {{ if fileExists (printf "static/%s" .) }}
+                        <a class="btn thesis-btn" href="{{ . | strings.TrimPrefix "/" | relURL }}">Thesis PDF</a>
+                        {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

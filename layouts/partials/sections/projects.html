@@ -1,56 +1,12 @@
 {{ if .Site.Params.projects.enable | default false }}
-{{- $projects := .Site.Language.Params.projects | default .Site.Params.projects -}}
 <section id="projects" class="py-5">
     <div class="container">
-        <h3 class="text-center">{{ $projects.title | default .Site.Params.projects.title | default (i18n "projects") }}</h3>
+        <h3 class="text-center section-heading">{{ .Site.Params.projects.title | default (i18n "projects") }}</h3>
         <div class="row justify-content-center px-3 px-md-5">
-            {{ range $projects.items | default .Site.Params.projects.items }}
-            <div class="col-lg-4 col-md-6 my-3">
-                <div class="card my-3 h-100 position-relative" title="{{ .title }}">
-                    {{ if .image }}
-                    <div class="card-head">
-                        <img class="card-img-top" src="{{ .image | strings.TrimPrefix "/" | relURL }}" alt="{{ .title }}">
-                    </div>
-                    {{ end }}
-                    <div class="card-body bg-transparent p-3">
-                        <div class="pb-2 bg-transparent">
-                            {{ range .badges }}
-                            <span class="badge badge-secondary">{{ . }}</span>
-                            {{ end }}
-                        </div>
-                        <h5 class="card-title bg-transparent mt-1">{{ .title }}</h5>
-                        <div class="card-text bg-transparent secondary-font">
-                            {{ .content }}
-                        </div>
-                    </div>
-                    {{ if or (.links) (.featured) }}
-                    <div class="card-footer py-3">
-                        {{ range .links }}
-                        <span class="m-1 mx-2 position-relative">
-                            <a href="{{ .url }}" target="_blank" rel="noopener">
-                                <i class="{{ .icon }}"></i>
-                            </a>
-                        </span>
-                        {{ end }}
-                        {{ if .featured }}
-                        <span class="float-end position-relative">
-                            <a class="btn btn-sm" href="{{ .featured.link }}" target="_blank" rel="noopener">
-                                {{ .featured.name }}
-                            </a>
-                        </span>
-                        {{ end }}
-                    </div>
-                    {{ end }}
-                    {{ if .featured }}
-                    <a class="stretched-link" href="{{ .featured.link }}" aria-label="{{ .title }}"></a>
-                    {{ end }}
-                </div>
-            </div>
-            {{ end }}
-            {{ range ( where .Site.RegularPages "Type" "projects" ).ByWeight }}
+            {{ range (where (where .Site.RegularPages "Type" "projects") "Params.thesis" "!=" true).ByWeight }}
             {{ if .Params.showInHome | default true }}
             <div class="col-lg-4 col-md-6 my-3">
-                <div class="card my-3 h-100 position-relative {{ if .Params.large }}project-card-lg{{ else }}project-card-sm{{ end }}" title="{{ .Title }}">
+                <div class="card project-card h-100 position-relative" title="{{ .Title }}">
                     {{ if .Params.image }}
                     <div class="card-head">
                         <img class="card-img-top" src="{{ .Params.image | strings.TrimPrefix "/" | relURL }}" alt="{{ .Title }}">
@@ -62,24 +18,18 @@
                             <span class="badge badge-secondary">{{ . }}</span>
                             {{ end }}
                         </div>
-                        <h5 class="card-title bg-transparent">{{ .Title | truncate 50 }}</h5>
+                        <h5 class="card-title bg-transparent">{{ .Title }}</h5>
                         <div class="card-text bg-transparent secondary-font">
-                            {{ .Summary | truncate 100 | safeHTML }}
+                            {{ .Summary | truncate 150 }}
                         </div>
                     </div>
-                    <div class="card-footer py-3">
+                    <div class="card-footer project-card-footer">
+                        <a class="project-card-link" href="{{ .RelPermalink }}">Details</a>
                         {{ range .Params.links }}
-                        <span class="m-1 mx-2 position-relative">
-                            <a href="{{ .url }}" target="_blank" rel="noopener">
-                                <i class="{{ .icon }}"></i>
-                            </a>
-                        </span>
+                        <a class="project-card-link" href="{{ .url }}" target="_blank" rel="noopener">
+                            {{ if .name }}{{ .name }} <span aria-hidden="true">&nearr;</span>{{ else }}<i class="{{ .icon }}"></i>{{ end }}
+                        </a>
                         {{ end }}
-                        <span class="float-end position-relative">
-                            <a class="btn btn-sm" href="{{ .RelPermalink }}">
-                                Details
-                            </a>
-                        </span>
                     </div>
                     <a class="stretched-link" href="{{ .RelPermalink }}" aria-label="{{ .Title }}"></a>
                 </div>

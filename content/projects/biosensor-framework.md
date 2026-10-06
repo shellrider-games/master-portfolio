@@ -23,7 +23,9 @@ links: []
 gallery: []
 # gallery:
 #   - "/images/projects/biosensor-framework/01.jpg"
-large: true
+thesis: true
+pdf: "master_thesis.pdf"
+researchQuestion: ""
 showInHome: true
 ---
 
