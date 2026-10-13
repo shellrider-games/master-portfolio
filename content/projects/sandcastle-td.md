@@ -3,6 +3,7 @@ title: "Sandcastle TD"
 kicker: "Commercial mobile tower defense"
 summary: "A commercial tower defense game I worked on as a freelancer for Bling Bling Games. I implemented the unit and enemy animation system, designed and optimised enemy behaviour, and automated the Jenkins build pipeline."
 image: "/images/projects/sandcastle-td/banner.png"
+video: "https://www.youtube.com/watch?v=SC_wMUlJ54c&t=17s"
 banner: "/images/projects/sandcastle-td/banner.png"
 weight: 5
 badges: ["Unity", "C#", "Jenkins", "Mobile"]
