@@ -20,4 +20,5 @@ gallery: []
 showInHome: true
 ---
 
-Sandcastle TD is a tactical sandbox tower defense game in which players build and defend a sandcastle against waves of beach critters using a roster of toy defenders. I contributed as a freelancer for Bling Bling Games, focusing on the systems behind the units and enemies as well as the build pipeline that kept the team shipping.
+Magical Library is an immersive VR puzzle game. The player is tasked to mix a magical ink using environmental clues. All the interactions in this game were designed by myself and I focused on atmosphere and believable interactions.
+
